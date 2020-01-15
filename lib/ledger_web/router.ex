@@ -5,7 +5,9 @@ defmodule LedgerWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", LedgerWeb do
+  scope "/api/v1", LedgerWeb do
     pipe_through :api
+
+    resources("/users", UserController)
   end
 end
